@@ -5,7 +5,7 @@ const RouterView = (routers)=>{
     return <Switch>
         {
             routers.map((item,i)=>{
-                return <Route path={item.path} exact={item.exact}  render={(match)=>{
+                return <Route key={i} path={item.path} exact={item.exact}  render={(match)=>{
                     return <item.component {...match} routers={item.routers} />
                 }}  />
             })
